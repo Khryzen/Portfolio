@@ -367,15 +367,15 @@
                             <h3>Contact Me</h3>
                             <form id="contact-form">
                                 <div class="form-group">
-                                    <input type="text" placeholder="Name" class="form-control" style="border: 1px solid rgb(60, 59, 59);"/>
+                                    <input type="text" id="fromName" placeholder="Name" class="form-control" style="border: 1px solid rgb(60, 59, 59);"/>
                                     <br>
-                                    <input type="text" placeholder="Your Email" class="form-control" style="border: 1px solid rgb(60, 59, 59);"/>
+                                    <input type="text" id="fromEmail" placeholder="Your Email" class="form-control" style="border: 1px solid rgb(60, 59, 59);"/>
                                     <br>
-                                    <input type="text" placeholder="Subject" class="form-control" style="border: 1px solid rgb(60, 59, 59);"/>
+                                    <input type="text" id="subject" placeholder="Subject" class="form-control" style="border: 1px solid rgb(60, 59, 59);"/>
                                     <br>
-                                    <textarea type="text" placeholder="Message" class="form-control" style="border: 1px solid rgb(60, 59, 59);"></textarea>
+                                    <textarea type="text" id="msg" placeholder="Message" class="form-control" style="border: 1px solid rgb(60, 59, 59);"></textarea>
                                     <br>
-                                    <button class="btn btn-light btn-lg" value="Send">Submit</button>
+                                    <button class="btn btn-light btn-lg" onclick="sendMail()">Submit</button>
                                 </div>
                             </form>
                         </div>
@@ -460,29 +460,15 @@
 <script src="assets/js/ct-paper-radio.js"></script>
 <script src="assets/js/bootstrap-select.js"></script>
 <script src="assets/js/bootstrap-datepicker.js"></script>
+<script src="assets/js/script.js"></script>
 
 <script src="assets/js/ct-paper.js"></script>
 
+
 <script type="text/javascript">
-    (function() {
-        // https://dashboard.emailjs.com/admin/integration
-        emailjs.init('user_Z3OWDIMrrz4HRiJiOO54o');
-    })();
-</script>
-<script type="text/javascript">
-    window.onload = function() {
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            // generate a five digit number for the contact_number variable
-            this.contact_number.value = Math.random() * 100000 | 0;
-            // these IDs from the previous steps
-            emailjs.sendForm('contact_service', 'contact_form', this)
-                .then(function() {
-                    console.log('SUCCESS!');
-                }, function(error) {
-                    console.log('FAILED...', error);
-                });
-        });
-    }
+(function() {
+emailjs.init("user_Z3OWDIMrrz4HRiJiOO54o");
+})();
+
 </script>
 </html>
