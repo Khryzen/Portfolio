@@ -6,10 +6,6 @@ function sendMail(params){
         reply_to: document.getElementById("fromEmail").value,
         message: document.getElementById("msg").value,
     });
-    .then(function(res){
-        console.log("success", res.status);
-    })
-
     document.getElementById("fromName").value = ""
     document.getElementById("subject").value = ""
     document.getElementById("fromEmail").value = ""
