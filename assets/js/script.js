@@ -1,11 +1,11 @@
 function sendMail(params){
-    var tempParams ={
+
+    emailjs.send('service_astxx1r','template_a2n0k8m', {
         from_name: document.getElementById("fromName").value,
         subject: document.getElementById("subject").value,
         reply_to: document.getElementById("fromEmail").value,
         message: document.getElementById("msg").value,
-    };
-    emailjs.send('service_astxx1r','template_a2n0k8m', tempParams)
+    });
     .then(function(res){
         console.log("success", res.status);
     })
